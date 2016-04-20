@@ -1,0 +1,7 @@
+greeting = ARGV.shift
+ 
+ARGV.each do |name|
+  puts "#{greeting} #{name}"
+end
+greeting.rb1:1
+LFUTF-8Ruby
