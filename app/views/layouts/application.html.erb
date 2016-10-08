@@ -9,15 +9,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <ul>
-      <li> "Welcome Back <%= current_user.email %>" </li>
-      <li> <%= link_to "log out", destroy_user_session_path, method: :delete %></li>
-    </ul>
-    <%= yield %>
-  </body>
+    <body>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+        <ul>
+          <li> "Welcome Back <%= current_user.email %>" </li>
+          <li> <%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      <%= yield %>
+    </body>
   <div>
     <a href="www.bloc.com">Find us on <span>BLOC!</span></a>
   </div>
