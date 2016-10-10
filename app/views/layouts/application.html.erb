@@ -13,8 +13,13 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
         <ul>
-          <li> "Welcome Back <%= current_user.email if user_signed_in? %>" </li>
-          <li> <%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+          <% if user_signed_in? %>
+            <li> "Welcome Back <%= current_user.email %>" </li>
+            <li> <%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li> Howdy </li>
+            <li> <%= link_to "sign in", new_user_session_path %></li>
+          <% end %>
         </ul>
       <%= yield %>
     </body>

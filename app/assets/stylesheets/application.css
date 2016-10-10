@@ -23,6 +23,7 @@ li {
      text-align:center;
      font-family:cursive;
      position: relative;
+     list-style: none;
    }
 
  div {
