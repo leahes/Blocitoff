@@ -1,6 +1,6 @@
 class ItemsController
   def create
-    @user = User.new
+    @item = Item.new
   end
 
   def index
