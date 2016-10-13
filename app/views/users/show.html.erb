@@ -1,5 +1,8 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
-<%= link_to "current_user_show", current_user %>
+
 <%= @user.email %>
+
+<p> Add an Item</p>
+<%= render partial: '/items/item', locals: { user_items: @user.items } %>
