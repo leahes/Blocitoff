@@ -7,11 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-10.times do
+15.times do
   user = User.new(
-    name: Faker::Name.name,
     email:Faker::Internet.email,
     password: Faker::Lorem.characters(10)
     )
     user.save!
   end
+
+  users = User.all 
+
+  20.times do
+  Item.create!(
+    user: users.sample,
+    name: Faker::Lorem.sentence
+  )
+  end
+  items = Item.all
+  puts "#{Item.count} items created"

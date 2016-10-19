@@ -7,10 +7,9 @@ class UsersController < ApplicationController
     end
 
     @item = Item.new
+    end
 
-  end
-
-  def new
-    @user = User.new
+    def new
+     @user = User.new
   end
 end
