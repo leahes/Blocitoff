@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
+    @item = Item.new
   end
 
   def new
