@@ -7,4 +7,4 @@
 <p> Add an Item</p>
 <%= render partial: '/items/item', locals: { user_items: @user.items } %>
 <%= render partial: "items/form" %>
-<%= @user.email %>
+<%= link_to "destroy", user_item_path([@user, @item]), method: :delete, class: 'glyphicon glyphicon-ok' %>
