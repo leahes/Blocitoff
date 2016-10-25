@@ -5,14 +5,10 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
-
     @item = Item.new
-    end
+  end
 
-    def new
-     @user = User.new
-    end
-
-    def destroy
-    end
+  def new
+   @user = User.new
+  end
 end

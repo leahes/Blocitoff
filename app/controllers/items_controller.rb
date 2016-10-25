@@ -29,13 +29,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     if @item.destroy
         flash[:notice] = "Deleted."
-        redirect_to root_path
       else
         flash[:error] = "There was an Error. Please try again."
-        redirect_to root_path
     end
 
-  respond_to do |format|
+    respond_to do |format|
        format.html { redirect_to user_path(current_user) }
        format.js
      end
