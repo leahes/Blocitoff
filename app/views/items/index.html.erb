@@ -1,0 +1,29 @@
+<h1> Todo List </h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Time Left</th>
+      <th>Completed?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @item.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.days_left %></td>
+        <td><%= link_to "completed", users_item_path(item), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+
+    <div>
+      <h3>Add item to list</h3>
+        <%= form_for Item.new, url: item_index_path(@item) do |f| %>
+        <%= f.label :name %>: <%= f.text_field :name, autofocus: true %>
+        <%= f.hidden_field :done, value: false %>
+        <%= f.submit "Add to list" %>
+        <% end %>
+    </div>

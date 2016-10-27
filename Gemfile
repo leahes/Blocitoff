@@ -31,6 +31,8 @@ gem 'faker'
 
 gem 'bootstrap-sass'
 
+gem 'time_left', '~> 0.1.2'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

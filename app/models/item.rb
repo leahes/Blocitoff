@@ -1,10 +1,17 @@
 class Item < ApplicationRecord
+
   belongs_to :user
 
-  validates :name, presence: true
-  validates :time_left, presence: true, numericality: { only_integer: true }
+  default_scope {order('updated_at DESC')}
 
-  def time_left
-  self.time_left - (DateTime.now.to_date - created_at.to_date).to_item
+
+  def expired?
+    remaining = (created_at = 7.days.ago)
+
+    if remaining < 0
+      true
+    else
+      false
+    end
   end
 end

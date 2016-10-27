@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    @items = current_user.item.all
   end
 
   def show
