@@ -1,8 +1,7 @@
 <% user_items.each do |item| %>
-  <%= item.name %>
-  <%=  link_to "completed", user_item_path(user_id: @user.id, id: item.id), method: :delete, class: 'glyphicon glyphicon-ok' %>
-<% end %>
 <div>
-    <h4 class='list-group-item-heading'><%= @item.name %></h4>
-    <p class='list-group-item-text'><%= time_left(@item) %></p>
+    <h4 class='list-group-item-heading'><%= item.name %></h4>
+    <p class='list-group-item-text'><%=distance_of_time_in_words(7.days.ago, item.created_at) %></p>
 </div>
+   <%=  link_to "completed", user_item_path(user_id: @user.id, id: item.id), method: :delete, class: "glyphicon glyphicon-ok" %>
+<% end %>
