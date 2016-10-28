@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   def expired?
     remaining = (created_at = 7.days.ago)
 
-    if remaining < 0
+    if remaining > 0
       true
     else
       false
