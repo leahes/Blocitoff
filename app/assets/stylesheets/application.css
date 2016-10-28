@@ -13,27 +13,24 @@
  *= require_tree .
  *= require_self
  */
-  h1 {
+h2 {
   text-align: center;
-	position: relative;
-	margin-left: 65px;
+}
+
+h1 {
+  text-align: center;
+  font-size: -webkit-xxx-large;
+  color: green;
 }
 
 li {
-     text-align:center;
+     text-align:left;
      font-family:cursive;
-     position: relative;
      list-style: none;
    }
 
  div {
- 	border-radius: 5px;
- 	border: 2px solid #6495ED;
- 	background-color: #BCD2EE;
- 	height: 50px;
- 	width: 150px;
- 	margin: auto;
- 	text-align: center;
+ 	text-align:center;
  }
 
  a {

@@ -1,7 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<%= @user.email %>
-
-<p> Add an Item</p>
-<%= render partial: '/items/item', locals: { user_items: @user.items } %>
-<%= render partial: "items/form" %>
+<h2 class='list-title'><%= "#{@user.email}'s todo list."%></h2>
+  <div class='row'>
+    <div class='col-md-4 pull-right'>
+      <h1>Blocitoff</h1>
+      <p>Self-destructing To-do List</p>
+      <p> Add an Item</p>
+    </div>
+    <div id="items" class='items list-group col-md-8 pull-left'>
+      <%= render partial: "items/form" %>
+    </div>
+  <div class='col-md-6'>
+ <%= render partial: '/items/item', locals: { user_items: @user.items } %>
+</div>
