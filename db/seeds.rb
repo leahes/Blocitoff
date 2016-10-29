@@ -9,19 +9,19 @@ require 'faker'
 
 15.times do
   user = User.new(
-    email:Faker::Internet.email,
+    email: Faker::Internet.email,
     password: Faker::Lorem.characters(10)
-    )
-    user.save!
-  end
+  )
+  user.save!
+end
 
-  users = User.all 
+users = User.all
 
-  20.times do
+20.times do
   Item.create!(
     user: users.sample,
     name: Faker::Lorem.sentence
   )
-  end
-  items = Item.all
-  puts "#{Item.count} items created"
+end
+items = Item.all
+puts "#{Item.count} items created"

@@ -4,29 +4,28 @@
     <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
     <title>Blocitoff</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-    <body>
-  	    <div class="nav nav-tabs">
-          <div class="pull-right user-info">
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
-            <ul>
-              <% if user_signed_in? %>
-                <li> "Welcome Back <%= current_user.email %>" </li>
-                <li> <%= link_to "log out", destroy_user_session_path, method: :delete %></li>
-              <% else %>
-                <li> Howdy </li>
-                <li> <%= link_to "sign in", new_user_session_path %></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      <%= yield %>
-    </body>
+  <body>
+    <div class="nav nav-tabs">
+      <div class="pull-right user-info">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <ul>
+          <% if user_signed_in? %>
+            <li> "Welcome Back <%= current_user.email %>" </li>
+            <li> <%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li> Howdy </li>
+            <li> <%= link_to "sign in", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <%= yield %>
+  </body>
   <div>
     <a>You have 7 days to complete these to-do's!...</a>
   </div>

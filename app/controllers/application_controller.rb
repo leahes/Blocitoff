@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def redirect_to_profile
-    if user_signed_in? && !controller_name == "users"
+    if user_signed_in? && !controller_name == 'users'
       redirect_to user_path(current_user)
     end
   end
